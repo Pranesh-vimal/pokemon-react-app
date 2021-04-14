@@ -92,18 +92,6 @@ function PokemonView() {
                             </div>
                         </div>
                     )}
-                    {pokemon.height && (
-                        <div className="text-center mt-4 md:mt-6">
-                            <div className="font-bold text-purple-800 grid grid-cols-1 md:grid-cols-2 gap-2">
-                                <div className="p-3 shadow-md rounded-md bg-pink-400 text-white font-extrabold">
-                                    Height :
-                                </div>
-                                <div className="p-3 shadow-md rounded-md bg-purple-500 text-white">
-                                    {pokemon.height} cm
-                                </div>
-                            </div>
-                        </div>
-                    )}
                     {pokemon.weight && (
                         <div className="text-center mt-4 md:mt-6">
                             <div className="font-bold text-purple-800 grid grid-cols-1 md:grid-cols-2 gap-2">
