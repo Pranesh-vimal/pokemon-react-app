@@ -1,0 +1,44 @@
+import React, { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
+
+function PokemonItem({ name, pokemonDetails }) {
+    const [details, setDetails] = useState("");
+    useEffect(() => {
+        pokemonDetails.forEach((details) => {
+            if (name === details.name) {
+                setDetails(details);
+            }
+        });
+    });
+    return (
+        <NavLink
+            to={`/about/${details.id}`}
+            className="shadow-md p-3 rounded-md text-center border border-gray-400"
+        >
+            {details && (
+                <>
+                    <img
+                        className="object-fill h-48 w-full"
+                        src={`https://pokeres.bastionbot.org/images/pokemon/${details.id}.png`}
+                        alt={details.name}
+                    />
+                    <p className="text-red-400 py-2 capitalize font-bold">
+                        {details.name}
+                    </p>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                        {details["abilities"].map((data, key) => (
+                            <div
+                                key={key}
+                                className="bg-purple-300 rounded-md capitalize font-bold"
+                            >
+                                {data["ability"].name}
+                            </div>
+                        ))}
+                    </div>
+                </>
+            )}
+        </NavLink>
+    );
+}
+
+export default PokemonItem;
