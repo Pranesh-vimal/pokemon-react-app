@@ -1,1 +1,1 @@
-# Pokemon App 🐉
+# Pokemon App
