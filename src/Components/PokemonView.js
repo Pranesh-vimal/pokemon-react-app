@@ -27,13 +27,21 @@ function PokemonView() {
         };
     }, [id, pokemon, history]);
 
+    const pad = (n, length) => {
+        var len = length - ("" + n).length;
+        return (len > 0 ? new Array(++len).join("0") : "") + n;
+    };
+
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 w-full mx-auto px-5 mt-6 pt-6 gap-3">
             {pokemon.id && (
                 <div className="mt-5">
                     <img
                         className="object-fill"
-                        src={`https://pokeres.bastionbot.org/images/pokemon/${pokemon.id}.png`}
+                        src={`https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${pad(
+                            pokemon.id,
+                            3
+                        )}.png`}
                         alt={pokemon.name}
                     />
                 </div>
