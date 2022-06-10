@@ -26,7 +26,7 @@ function PokemonItem({ name, pokemonDetails }) {
                     <img
                         className="object-fill h-48 w-full"
                         src={`https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${pad(
-                            details.id
+                            details.id, 3
                         )}.png`}
                         alt={details.name}
                     />
