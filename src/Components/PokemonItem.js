@@ -10,6 +10,12 @@ function PokemonItem({ name, pokemonDetails }) {
             }
         });
     });
+
+    const pad = (n, length) => {
+        var len = length - ("" + n).length;
+        return (len > 0 ? new Array(++len).join("0") : "") + n;
+    };
+
     return (
         <NavLink
             to={`/about/${details.id}`}
@@ -19,7 +25,9 @@ function PokemonItem({ name, pokemonDetails }) {
                 <>
                     <img
                         className="object-fill h-48 w-full"
-                        src={`https://pokeres.bastionbot.org/images/pokemon/${details.id}.png`}
+                        src={`https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${pad(
+                            details.id
+                        )}.png`}
                         alt={details.name}
                     />
                     <p className="text-red-400 py-2 capitalize font-bold">
